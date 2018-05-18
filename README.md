@@ -19,3 +19,4 @@ Credit: Harrison, Jacob, Tom, David, Jesus, Terrel, Tuan
 8. ```cd contactmanager```
 9. ```python manage.py migrate```
 10. To run the app: ```python manage.py runserver```
+11. You will see a portal to the project on terminal (something like ```http://127.0.0.1:8000/```). 
