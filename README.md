@@ -10,7 +10,9 @@ Credit: Harrison, Jacob, Tom, David, Jesus, Terrel, Tuan
 3. Install virtualenv (development environment)
  * ```pip install virtualenv```
 4. Change directory to project's directory
-5. ```virtualenv env```
+5. ```virtualenv env -p python3```
 6. ```source env/bin/activate```
-7. ```pip install Django```
-## Installation Guide (Windows)
+7. ```pip install -r requirements.txt```
+8. ```cd contactmanager```
+9. ```python manage.py migrate```
+10. To run the app: ```python manage.py runserver```
