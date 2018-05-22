@@ -1,5 +1,5 @@
 # Contact Manager Project - Group 2 
-Contact Manager: Oracle DB, Python/Django, JavaScript. 
+Contact Manager: SQLite, Python/Django, JavaScript. 
 
 Credit: Harrison, Jacob, Tom, David, Jesus, Terrel, Tuan
 ## Installation Guide (Mac OS + Linux)
