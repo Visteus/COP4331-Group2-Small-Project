@@ -35,3 +35,7 @@ h3 {
   border-width: 1px;
   border-color: black;
 }
+
+.errorMsg {
+  color: red;
+}
