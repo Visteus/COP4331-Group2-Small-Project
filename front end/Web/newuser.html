@@ -1,0 +1,30 @@
+<!-- COP 4331 Project 1 -->
+<!-- New user page -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Create an account</title>
+		<link rel="stylesheet" type="text/css" href="css/webpage.css">
+		<script type="text/javascript" src="scripts/newacc.js"></script>
+	</head>
+
+	<body>
+	<!-- This div is the screen users see when making a new account -->
+		<div id = "newAccPage">
+			<h3>Create a new account.</h3>
+
+			Username: <br>
+			<input type = "text" id = "newUsername" size = 23> <br><br>
+			Password: <br>
+			<input type = "password" id = "newPass1" size = 23> <br><br>
+			Confirm Password: <br>
+			<input type = "password" id = "newPass2" size = 23> <br><br>
+
+			<input type = "button" value = "Submit" id = "doNewAccBtn" onclick = "doNewAcc();">
+			<input type = "button" value = "Cancel" id = "cancelButton" onclick="location.reload();location.href='./login.html'">
+
+			<br><br><span id = "errorNU" class = "errorMsg"></span>
+		</div>
+
+	</body>
+</html>

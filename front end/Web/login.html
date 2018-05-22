@@ -1,0 +1,26 @@
+<!-- COP 4331 Project 1 -->
+<!-- Login page -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Contact Book - Login</title>
+		<link rel="stylesheet" type="text/css" href="css/webpage.css">
+		<script type="text/javascript" src="scripts/login.js"></script>
+	</head>
+
+	<body>
+	<!-- This div is the login screen -->
+		<div id = "loginPage">
+			<h3>Please Log In</h3>
+
+			<br>
+			<input type = "text" id = "usernameBox" placeholder="Username" size = "23"> <br>
+			<input type = "password" id = "passwordBox" placeholder="Password" size = "23"> <br><br>
+
+			<input type = "button" value = "Submit" id = "loginButton" onclick = "doLogin();">
+			<input type = "button" value = "Make New Account" id = "newAccButton" onclick="location.reload();location.href='./newuser.html'">
+			
+			<br><br><span id = "errorLI" class = "errorMsg"></span>
+		</div>
+	</body>
+</html>
