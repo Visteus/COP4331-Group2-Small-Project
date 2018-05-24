@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %} 
+
+{% block content %}
+<div id="loginPage">
+	<h3>Please Log In</h3>
+
+	<br>
+	<input type="text" id="usernameBox" placeholder="Username" size="23">
+	<br>
+	<input type="password" id="passwordBox" placeholder="Password" size="23">
+	<br>
+	<br>
+
+	<input type="button" value="Submit" id="loginButton" onclick="doLogin();">
+	<input type="button" value="Make New Account" id="newAccButton" onclick="showNewAccPg();">
+	<br>
+	<br>
+
+	<span id="errorMsg1"></span>
+</div>
+{% endblock %}

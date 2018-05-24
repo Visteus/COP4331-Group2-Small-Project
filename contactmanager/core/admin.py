@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import users
 
-# Register your models here.
+# Access users with administrator privileges 
+admin.site.register(users)
