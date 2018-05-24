@@ -19,26 +19,61 @@ h3 {
     padding-left: 12px;
 }
 
-.passbox {
+.loginbox {
   max-width: 185px;
   height: 35px;
   font-size: 18px;
   padding-left: 12px;
+  box-shadow: inset 0 0 2px 0px #000;
+  outline-width: 0;
+  border-width: 0;
 }
 
-#loginPage, #newAccPage{
+input[type="button"] {
+
+  min-width: 50px;
+  height: 40px;
+  border-width: 0;
+  background: transparent;
+
+  font-size: 12px;
+  text-decoration: underline;
+  transition: .7s;
+}
+input[type="button"]:hover{
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration:none;
+
+  background: lightgrey;
+  opacity: .7;
+}
+
+#ImgBkgrd {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: url(https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  filter: hue-rotate(10deg);
+  transform: scale(1.2);
+}
+
+#loginPage, #newAccPage, #userPage{
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 15px;
+  padding: 45px;
   min-width: 200px;
   min-height: 250px;
 
-  border-style: solid;
-  border-radius: 2%;
-  border-width: 1px;
-  border-color: black;
+  background: rgba(255,255,255,.7);
+  box-shadow: 0 0 4px 2px rgba(5,5,5,0.2);
+  border-width: 0;
 }
 
 .errorMsg {

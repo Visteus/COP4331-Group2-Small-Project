@@ -10,12 +10,13 @@
 
 	<body>
 	<!-- This div is the login screen -->
+		<div id = "ImgBkgrd"></div>
 		<div id = "loginPage">
 			<h3>Please Log In</h3>
 
 			<br>
-			<input type = "text" id = "usernameBox" placeholder="Username" size = "23"> <br>
-			<input type = "password" id = "passwordBox" class="passbox" placeholder="Password" size = "23"> <br><br>
+			<input type = "text" id = "usernameBox" placeholder="Username" class="loginbox" size = "23"> <br>
+			<input type = "password" id = "passwordBox" class="loginbox" placeholder="Password" size = "23"> <br><br>
 
 			<input type = "button" value = "Submit" id = "loginButton" onclick = "doLogin();">
 			<input type = "button" value = "Make New Account" id = "newAccButton" onclick="location.reload();location.href='./newuser.html'">
