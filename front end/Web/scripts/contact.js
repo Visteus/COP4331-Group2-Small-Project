@@ -18,3 +18,15 @@
 		document.getElementById("errorCB").innerHTML = err.message;
 	}
  }
+ 
+//Sends new contact information to server
+function confirmAdd()
+{
+	var cFirst = document.getElementById("fName").value;
+	var cLast = document.getElementById("lName").value;
+	var cEmail = document.getElementById("email").value;
+	var cPhone = document.getElementById("phone").value;
+	
+	//Create payload
+	var jPayload = '{"first" : "' + cFirst + '", "last" : "' + cLast + '", "email" : "' + cEmail + '", "phone" : "' + cPhone + '"}';
+}
