@@ -4,18 +4,37 @@
 <html>
 	<head>
 		<title>Contact Book</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/webpage.css">
 		<script type="text/javascript" src="scripts/contact.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="scripts/bootstrap.min.js"></script>
 	</head>
 
 	<body>
 	<!-- This div is the screen users see when logged in -->
 	<div id = "ImgBkgrd"></div>
-		<div id = "userPage">
-			<h3>Contact Book</h3>
-			<p id = userSpan></p>
-			<input type = "button" value = "Log Out" id = "logoutButton" onclick="doLogout();"><br>
-			<br><br><span id = "errorCB" class = "errorMsg"></span>
+	<div id = "userPage">
+		<h3>Contact Book</h3>
+		<p id = userSpan></p>
+		<input type = "button" value = "Log Out" id = "logoutButton" onclick="doLogout();">
+		<input type = "button" value = "Add Contact" id = "addBtn" data-toggle="collapse" data-target="#addDiv">
+			
+		<!-- This is the menu to add new contacts-->
+		<div id = "addDiv">
+			<p>Add new contact:</p>
+			<input type = "text" id = "fName" placeholder="First Name" size = "23">
+			<input type = "text" id = "email" placeholder="Email" size = "23">
+			<br>
+			
+			<input type = "text" id = "lName" placeholder="Last Name" size = "23">
+			<input type = "text" id = "phone" placeholder="Phone Number" size = "23">
+			
+			<br><br>
+			<input type = "button" value = "Confirm" id = "confirmBtn" onclick="confirmAdd();">
+		</div>
+		
+		<br><span id = "errorCB" class = "errorMsg"></span>
 		</div>
 
 	</body>
