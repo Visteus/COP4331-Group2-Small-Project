@@ -1,5 +1,8 @@
 from django.contrib import admin
-from .models import users
+from core.models import Contact
+from django.contrib.auth.admin import UserAdmin
+from django.contrib.auth.models import User
 
-# Access users with administrator privileges 
-admin.site.register(users)
+# Register your models here.
+
+admin.site.register(Contact)

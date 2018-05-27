@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %} 
+
+{% block content %}
+	<h2>Create a new contact</h2>
+	<form method="POST">
+		{% csrf_token %}
+		<table>
+			<tr>
+				<td>
+					<lable for="firstNameBox">First Name</lable>
+				</td>
+				<td>
+					<input type="text" id="firstNameBox" name="firstname" size="23">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<lable for="lastNameBox">Last Name</lable>
+				</td>
+				<td>
+					<input type="text" id="lastNameBox" name="lastname" size="23">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<lable for="emailBox">Email</lable>
+				</td>
+				<td>
+					<input type="email" id="emailBox" name="email" size="23">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<lable for="phonenumberBox">Phone Number</lable>
+				</td>
+				<td>
+					<input type="text" id="phonenumberBox" name="phonenumber" size="23">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="submit" value="Submit" id="loginButton">
+				</td>
+				<td>
+					<a href="{% url 'core:contact_view' %}">Go Back</a>
+				</td>
+			</tr>
+		</table>
+	</form>
+{% endblock %}

@@ -2,5 +2,11 @@
 
 {% block content %}
 	<p>Contact List</p>
+	<ul>
+		{% for contact in contact_list %}
+			<li>{{ contact }}</li> 
+		{% endfor %}
+	</ul>
+	<a href="{% url 'core:create_new_contact' %}">Create A New Contact</a>
 	<a href="{% url 'core:logout_view' %}">Logout</a>
 {% endblock %}
