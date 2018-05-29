@@ -27,6 +27,12 @@ function confirmAdd()
 	var cEmail = document.getElementById("email").value;
 	var cPhone = document.getElementById("phone").value;
 	
+	//Clear text fields
+	document.getElementById("fName").value = "";
+	document.getElementById("lName").value = "";
+	document.getElementById("email").value = "";
+	document.getElementById("phone").value = "";
+	
 	//Create payload
 	var jPayload = '{"first" : "' + cFirst + '", "last" : "' + cLast + '", "email" : "' + cEmail + '", "phone" : "' + cPhone + '"}';
 }
