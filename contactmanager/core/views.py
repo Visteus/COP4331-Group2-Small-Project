@@ -4,7 +4,8 @@ from django.http import HttpResponseRedirect
 from django.template import loader
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .models import users
+from django.contrib.auth.models import User
+from .models import Contact
 
 # Handle login request
 def login_view(request):
@@ -26,15 +27,48 @@ def login_view(request):
 def logout_view(request):
 	logout(request)
 	return render(request, 'core/logout.html')
-	
+
 
 # Contact - main page
 @login_required(login_url='')
 def index(request):
 	return render(request, 'core/contact.html')
 
-# @login_required(login_url='')
-# def create_contact(request):
+@login_required(login_url='')
+def create_user(request):
+	if request.method == 'POST':
+		username = request.POST['username']
+		password = request.POST['password']
+		first_name = request.POST['firstname']
+		last_name = request.POST['lastname']
+		email = request.POST['email']
+		user = User.objects.create_user(
+			username = username,
+			password = password,
+			first_name = first_name,
+			last_name = last_name,
+			email = email
+		)
+		user.save()
+		return HttpResponseRedirect(reverse('core:login_view'))
+	return render(request, 'core/newuser.html')
 
 
 
+@login_required(login_url='')
+def create_contact(request):
+	if request.method == 'POST':
+		first_name = request.POST['firstname']
+		last_name = request.POST['lastname']
+		email = request.POST['email']
+		phone_number = request.POST['phonenumber']
+		new_contact = Contact.objects.create_contact(
+			user = request.user,
+			first_name = first_name,
+			last_name = last_name,
+			email = email,
+			phone_number = phone_number
+		)
+		new_contact.save()
+		return HttpResponseRedirect(reverse('core:contact_view'))
+	return render(request, 'core/newcontact.html')
