@@ -38,10 +38,11 @@ def index(request):
 # def create_contact(request):
 
 @login_required(login_url='')
-def search_contact(request, pk):
+def search_contact(request):
 	if request.method == 'POST':
+		user_id = request.user.id
 		search = request.POST['search']
-		contact_list = contacts.objects.filter(Q(user_fk=pk) |
+		contact_list = contacts.objects.filter(Q(user_fk=user_id) |
 				Q(first_name__icontains=search) |
 				Q(last_name__icontains=search) |
 				Q(phone_number__icontains=search) |
