@@ -6,8 +6,9 @@ app_name = 'core'
 
 urlpatterns = [
     path('contacts/', views.contact_view, name='contact_view'),
-    path('newcontact/', views.create_new_contact, name='create_new_contact'),
-    # path('contactdetail/', views.contact_detail_view, name='contact_detail_view'),
+    path('contacts/newcontact/', views.create_new_contact, name='create_new_contact'),
+    path('contacts/contactdetail/<int:contact_id>/', views.contact_detail_view, name='contact_detail_view'),
+    path('contacts/editcontact/<int:contact_id>/', views.edit_contact, name='edit_contact'),
     path('logout/', views.logout_view, name='logout_view'),
 
     # require login 

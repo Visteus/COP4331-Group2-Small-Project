@@ -48,8 +48,8 @@ def create_new_user(request):
 
 @login_required(login_url='')
 def contact_view(request):
-	# user = request.user
-	contact_list = Contact.objects.all()
+	user_id = request.user.id
+	contact_list = Contact.objects.filter(user_id = user_id)
 	return render(
 		request, 
 		'core/contact.html',
@@ -78,11 +78,33 @@ def create_new_contact(request):
 	return render(request, 'core/newcontact.html')
 
 
-# @login_required(login_url='')
-# def contact_detail_view(request, contact_id):
-# 	contact = get_object_or_404(Contact, pk=contact_id)
-# 	try:
+@login_required(login_url='')
+def contact_detail_view(request, contact_id):
+	contact = get_object_or_404(Contact, pk=contact_id)
+	if request.method == 'POST':
+		if contact.user == request.user:
+			if request.POST['delete-contact']:
+				contact.delete()
+				return HttpResponseRedirect(reverse('core:contact_detail_view'))
+	return render(
+		request,
+		'core/contactdetail.html',
+		{
+			'contact': contact
+		}
+	)
 		
+
+@login_required(login_url='')
+def edit_contact(request, contact_id):
+	contact = get_object_or_404(Contact, pk=contact_id)
+	return render(
+		request,
+		'core/editcontact.html',
+		{
+			'contact':contact,
+		}
+	)
 
 
 @login_required(login_url='')

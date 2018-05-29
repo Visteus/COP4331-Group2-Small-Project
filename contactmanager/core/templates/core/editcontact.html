@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %} 
+
+{% block content %}
+	<h2>Edit Contact</h2>
+	<form method="POST">
+		<table>
+			<tr>
+				<td>Firstname</td>
+				<td><input type="text" value="{{ contact.first_name }}"></td>
+			</tr>
+			<tr>
+				<td>Lastname</td>
+				<td><input type="text" value="{{ contact.last_name }}"></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="email" value="{{ contact.email }}"></td>
+			</tr>
+			<tr>
+				<td>Phone number</td>
+				<td><input type="text" value="{{ contact.phone_number }}"></td>
+			</tr>
+		</table>
+		<input type="submit" value="Submit" class="edit">
+		<a href="{% url 'core:contact_detail_view' contact.id %}">Go back</a>
+	</form>
+{% endblock %}

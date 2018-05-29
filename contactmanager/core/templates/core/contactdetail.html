@@ -1,5 +1,33 @@
 {% extends 'core/base.html' %} 
 
 {% block content %}
-	
+	<h2>Contact Detail</h2>
+	{% if error_message %}
+		<p>{{ error_message }}</p>
+	{% endif%}
+	<form method="POST">
+		{% csrf_token %}
+		<div>
+			<table>
+				<tr>
+					<td>Firstname</td>
+					<td>{{ contact.first_name }}</td>
+				</tr>
+				<tr>
+					<td>Lastname</td>
+					<td>{{ contact.last_name }}</td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td>{{ contact.email }}</td>
+				</tr>
+				<tr>
+					<td>Phone number</td>
+					<td>{{ contact.phone_number }}</td>
+				</tr>
+			</table>
+		</div>
+		<input type="submit" value="Delete this contact" name="delete-contact" />
+		<a href="{% url 'core:edit_contact' contact.id %}">Edit this contact</a>
+	</form>
 {% endblock %}
