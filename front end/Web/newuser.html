@@ -15,15 +15,16 @@
 	<!-- This div is the screen users see when making a new account -->
 		<div id = "ImgBkgrd"></div>
 		<div id = "newAccPage">
-			<h3>Create a new account.</h3>
+			<h3>Create a new account.</h3><hr><br>
 
-			<input type = "text" id = "newUsername" class="loginbox"  placeholder="Username" size = "23"> <br>
-			<input type = "password" id = "newPass1" class="loginbox" placeholder="Password" size = "23"> <br><br>
-			<input type = "password" id = "newPass2" class="loginbox" placeholder="Confirm Password" size = "23"> <br><br>
 
-			<input type = "button" value = "Submit" id = "doNewAccBtn" onclick = "doNewAcc();">
-			<input type = "button" value = "Cancel" id = "cancelButton" onclick="location.reload();location.href='./login.html'">
-
+				<input type = "text" id = "newUsername"  class="loginbox" placeholder="Username" size = "23"> <br>
+				<input type = "password" id = "newPass1"  class="loginbox" placeholder="Password" size = "23"> <br>
+				<input type = "password" id = "newPass2"  class="loginbox" placeholder="Confirm Password" size = "23"> <br><br>
+				<div id="btncontainer">
+			<input type = "button" value = "Submit" id = "doNewAccBtn" class="subutton"  class="subutton"  onclick = "doNewAcc();">
+			<input type = "button" value = "Cancel" id = "cancelButton"  class="subutton" onclick="location.reload();location.href='./login.html'">
+		</div> 
 			<br><br><span id = "errorNU" class = "errorMsg"></span>
 		</div>
 
