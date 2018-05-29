@@ -5,6 +5,7 @@ from django.template import loader
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .models import users
+from django.db.models import Q
 
 # Handle login request
 def login_view(request):
@@ -36,5 +37,17 @@ def index(request):
 # @login_required(login_url='')
 # def create_contact(request):
 
-
+@login_required(login_url='')
+def search_contact(request, pk):
+	if request.method == 'POST':
+		search = request.POST['search']
+		contact_list = contacts.objects.filter(Q(user_fk=pk) |
+				Q(first_name__icontains=search) |
+				Q(last_name__icontains=search) |
+				Q(phone_number__icontains=search) |
+				Q(email__icontains=search))
+		return render(request, 'core/contact.html', {
+			'contact' : contact_list
+		})
+	return render(request, 'core/contact.html')
 
