@@ -1,12 +1,10 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-	<h2>Contact List</h2>
-	<ul>
-		{% for contact in contact_list %}
-			<li><a href="{% url 'core:contact_detail_view' contact.id %}">{{ contact }}</a></li> 
-		{% endfor %}
-	</ul>
+	<h2>Contact Manager</h2>
+	{% csrf_token %}
+	<input type="search" id="search" name="search" placeholder="Search contacts..." />
+	<ul id="search-results"></ul>
 	<a href="{% url 'core:create_new_contact' %}">Create A New Contact</a>
 	<a href="{% url 'core:logout_view' %}">Logout</a>
 {% endblock %}

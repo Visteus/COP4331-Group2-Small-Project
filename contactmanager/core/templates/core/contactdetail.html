@@ -4,7 +4,7 @@
 	<h2>Contact Detail</h2>
 	{% if error_message %}
 		<p>{{ error_message }}</p>
-	{% endif%}
+	{% endif %}
 	<form method="POST">
 		{% csrf_token %}
 		<div>
@@ -28,6 +28,6 @@
 			</table>
 		</div>
 		<input type="submit" value="Delete this contact" name="delete-contact" />
-		<a href="{% url 'core:edit_contact' contact.id %}">Edit this contact</a>
+		<a href="{% url 'core:contact_view' %}">Go Back</a>
 	</form>
 {% endblock %}

@@ -1,12 +1,12 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, render_to_response
 from django.urls import reverse
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.template import loader
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .models import Contact
-
+from django.db.models import Q
 
 def login_view(request):
 	if request.method == 'POST':
@@ -82,10 +82,11 @@ def create_new_contact(request):
 def contact_detail_view(request, contact_id):
 	contact = get_object_or_404(Contact, pk=contact_id)
 	if request.method == 'POST':
+		# Delete contact
 		if contact.user == request.user:
 			if request.POST['delete-contact']:
 				contact.delete()
-				return HttpResponseRedirect(reverse('core:contact_detail_view'))
+				return HttpResponseRedirect(reverse('core:contact_view'))
 	return render(
 		request,
 		'core/contactdetail.html',
@@ -96,16 +97,28 @@ def contact_detail_view(request, contact_id):
 		
 
 @login_required(login_url='')
-def edit_contact(request, contact_id):
-	contact = get_object_or_404(Contact, pk=contact_id)
+def search_contact(request):
+	if request.method == 'POST':
+		user_id = request.user.id
+		search_text = request.POST['search_text']
+		contacts = Contact.objects.filter(
+			Q(user_id=user_id),
+			Q(first_name__icontains=search_text) |
+			Q(last_name__icontains=search_text) |
+			Q(phone_number__icontains=search_text) |
+			Q(email__icontains=search_text)
+		)
+		# render_to_reponse: save time for AJAX call due to not calling request
+		return render_to_response(
+			'core/searchcontact.html',
+			{
+				'contacts': contacts
+			}
+		)
 	return render(
 		request,
-		'core/editcontact.html',
-		{
-			'contact':contact,
-		}
+		'core/contact.html',
 	)
-
 
 @login_required(login_url='')
 def logout_view(request):
