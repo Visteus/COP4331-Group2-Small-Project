@@ -14,17 +14,22 @@
 	<body>
 	<!-- This div is the screen users see when logged in -->
 	<div id = "ImgBkgrd"></div>
+
 	<div id = "userPage">
 		<h3>Contact Book</h3><hr><br>
 
 
+=======
+	<div id = "userPage" class = "container-fluid">
+		<h3>Contact Book</h3>
+
 		<p id = userSpan></p>
 		<div id="btncontainer">
-		<input type = "button" value = "Log Out" id = "logoutButton"  class="subutton" onclick="doLogout();">
-		<input type = "button" value = "Add Contact" id = "addBtn"  class="subutton" data-toggle="collapse" data-target="#addDiv">
+		<input type = "button" value = "Log Out" id = "logoutButton"  class="btn btn-outline-secondary" onclick="doLogout();">
+		<input type = "button" value = "Add Contact" id = "addBtn"  class="btn btn-outline-secondary" data-toggle="collapse" data-target="#addDiv" href="#addDiv">
 		</div>
 		<!-- This is the menu to add new contacts-->
-		<div id = "addDiv">
+		<div id = "addDiv" class="collapse">
 			<p>Add new contact:</p>
 			<input type = "text" id = "fName" class="loginbox" placeholder="First Name" size = "23">
 			<input type = "text" id = "email" class="loginbox" placeholder="Email" size = "23">
