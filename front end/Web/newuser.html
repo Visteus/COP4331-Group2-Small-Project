@@ -5,9 +5,10 @@
 	<head>
 		<title>Create an account</title>
 		<link rel="stylesheet" type="text/css" href="css/webpage.css">
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 		<script type="text/javascript" src="scripts/newacc.js"></script>
 	</head>
 
@@ -21,10 +22,11 @@
 				<input type = "text" id = "newUsername"  class="loginbox" placeholder="Username" size = "23"> <br>
 				<input type = "password" id = "newPass1"  class="loginbox" placeholder="Password" size = "23"> <br>
 				<input type = "password" id = "newPass2"  class="loginbox" placeholder="Confirm Password" size = "23"> <br><br>
+
 				<div id="btncontainer">
-			<input type = "button" value = "Submit" id = "doNewAccBtn" class="subutton"  class="subutton"  onclick = "doNewAcc();">
-			<input type = "button" value = "Cancel" id = "cancelButton"  class="subutton" onclick="location.reload();location.href='./login.html'">
-		</div> 
+					<input type = "button" value = "Submit" id = "doNewAccBtn" class="subutton"  class="subutton"  onclick = "doNewAcc();">
+					<input type = "button" value = "Cancel" id = "cancelButton"  class="subutton" onclick="location.reload();location.href='./login.html'">
+				</div>
 			<br><br><span id = "errorNU" class = "errorMsg"></span>
 		</div>
 
