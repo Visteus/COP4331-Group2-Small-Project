@@ -14,6 +14,7 @@
 
 	<body>
 	<!-- This div is the login screen -->
+
 		<div id = "ImgBkgrd"></div>
 		<div id = "loginPage" >
 
@@ -22,11 +23,12 @@
 					<br>
 					<input type = "text" id = "usernameBox" placeholder="Username" class="loginbox" size = "23"> <br>
 					<input type = "password" id = "passwordBox" class="loginbox" placeholder="Password" size = "23"> <br><br>
-					<div id="btncontainer">
-					<input type = "button" value = "Submit" id = "loginButton" class="subutton" onclick = "doLogin();">
-					<input type = "button" value = "Make New Account" id = "newAccButton"  class="subutton" onclick="location.reload();location.href='./newuser.html'">
-				 </div>
-					<br><br><span id = "errorLI" class = "errorMsg"></span>
+
+					<div class="btn-group" role="group">
+						<input type = "button" value = "Submit" id = "loginButton" class="btn btn-outline-secondary" onclick = "doLogin();">
+						<input type = "button" value = "Make New Account" id = "newAccButton"  class="btn btn-outline-secondary" onclick="location.reload();location.href='./newuser.html'">
+				  </div>
+					<span id = "errorLI" class = "errorMsg"></span>
 		</div>
 	</body>
 </html>

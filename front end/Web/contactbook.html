@@ -21,9 +21,9 @@
 
 
 		<p id = userSpan></p>
-		<div id="btncontainer">
-			<input type = "button" value = "Log Out" id = "logoutButton"   onclick="doLogout();">
-			<input type = "button" value = "Add Contact" id = "addBtn"   data-toggle="collapse" data-target="#addDiv">
+		<div class="btn-group" role="group">
+			<input type = "button" value = "Log Out" id = "logoutButton" class="btn btn-outline-secondary"  onclick="doLogout();">
+			<input type = "button" value = "Add Contact" id = "addBtn"  class="btn btn-outline-secondary" data-toggle="collapse" data-target="#addDiv">
 		</div>
 		<!-- This is the menu to add new contacts-->
 			<br><br>
@@ -38,7 +38,7 @@
 				<input type = "text" id = "phone" class="loginbox" placeholder="Phone Number" size = "23">
 
 				<br><br>
-				<input type = "button" value = "Confirm" id = "confirmBtn"  class="subutton" onclick="confirmAdd();">
+				<input type = "button" value = "Confirm" id = "confirmBtn"  class="btn btn-outline-secondary" onclick="confirmAdd();">
 
 			</div>
 
