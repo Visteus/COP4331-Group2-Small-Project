@@ -108,7 +108,7 @@ def search_contact(request):
 			Q(phone_number__icontains=search_text) |
 			Q(email__icontains=search_text)
 		)
-		# render_to_reponse: save time for AJAX call due to not calling request
+		# render_to_reponse: reduce loading time for AJAX call due to not calling request
 		return render_to_response(
 			'core/searchcontact.html',
 			{
@@ -124,4 +124,3 @@ def search_contact(request):
 def logout_view(request):
 	logout(request)
 	return render(request, 'core/logout.html')
-	
