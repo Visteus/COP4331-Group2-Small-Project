@@ -1,23 +1,6 @@
-{% extends 'core/base.html' %} 
+{% extends 'core/base.html' %}
 
 {% block content %}
-<!-- <div id="loginPage">
-	<h3>Please Log In</h3>
-
-	<br>
-	<input type="text" id="usernameBox" placeholder="Username" size="23">
-	<br>
-	<input type="password" id="passwordBox" placeholder="Password" size="23">
-	<br>
-	<br>
-
-	<input type="button" value="Submit" id="loginButton" onclick="doLogin();">
-	<input type="button" value="Make New Account" id="newAccButton" onclick="showNewAccPg();">
-	<br>
-	<br>
-
-	<span id="errorMsg1"></span>
-</div> -->
 	<div>
 		<h2>Please Log In</h2>
 		{% if error_message %}
@@ -43,11 +26,8 @@
 					</td>
 				</tr>
 				<tr>
-					<td></td>
-					<td>
-						<!-- <input type="submit" value="Submit" id="loginButton" onclick="doLogin();"> -->
-						<input type="submit" value="Submit">
-					</td>
+					<td><input type="submit" value="Login" id="loginButton"></td>
+					<td><a href="{% url 'core:create_user' %}">Create New Account</a></td>
 				</tr>
 			</table>
 		</form>

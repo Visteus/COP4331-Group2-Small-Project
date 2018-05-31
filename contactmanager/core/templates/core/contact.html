@@ -2,5 +2,6 @@
 
 {% block content %}
 	<p>Contact List</p>
+	<a href="{% url 'core:create_contact' %}">Add Contact</a>
 	<a href="{% url 'core:logout_view' %}">Logout</a>
 {% endblock %}
