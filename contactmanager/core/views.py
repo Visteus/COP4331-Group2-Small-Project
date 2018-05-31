@@ -28,13 +28,12 @@ def logout_view(request):
 	logout(request)
 	return render(request, 'core/logout.html')
 
-
 # Contact - main page
 @login_required(login_url='')
 def index(request):
 	return render(request, 'core/contact.html')
 
-#@login_required(login_url='')
+
 def create_user(request):
 	if request.method == 'POST':
 		username = request.POST['username']
@@ -54,7 +53,6 @@ def create_user(request):
 	return render(request, 'core/newuser.html')
 
 
-
 @login_required(login_url='')
 def create_contact(request):
 	if request.method == 'POST':
@@ -72,6 +70,7 @@ def create_contact(request):
 		new_contact.save()
 		return HttpResponseRedirect(reverse('core:contact_view'))
 	return render(request, 'core/newcontact.html')
+
 
 @login_required(login_url='')
 def contact_view(request):
