@@ -42,8 +42,7 @@ def search_contact(request):
 	if request.method == 'POST':
 		user_id = request.user.id
 		search = request.POST['search']
-		contact_list = contacts.objects.filter(Q(user_fk=user_id) |
-				Q(first_name__icontains=search) |
+		contact_list = contacts.objects.filter(user_fk=user.id).filter(Q(first_name__icontains=search) |
 				Q(last_name__icontains=search) |
 				Q(phone_number__icontains=search) |
 				Q(email__icontains=search))
