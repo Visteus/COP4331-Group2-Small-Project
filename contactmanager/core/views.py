@@ -120,6 +120,7 @@ def search_contact(request):
 		'core/contact.html',
 	)
 
+
 @login_required(login_url='')
 def logout_view(request):
 	logout(request)
