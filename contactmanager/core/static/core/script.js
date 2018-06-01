@@ -15,15 +15,3 @@ $(function () {
 		});
 	});
 });
-
-
-$(document).ready(function() {
-	// if (('#search').value == '') {
-	// 	$('#search-results').remove();
-	// }
-});
-
-
-
-
-

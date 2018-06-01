@@ -1,0 +1,136 @@
+body, #ImgBkgrd::before {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 150;
+  background: url(https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)  0 / cover fixed;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+
+p {
+  padding-top: 35px;
+  text-align: center;
+}
+
+hr {
+
+ border: 0;
+ height: 3px !important;
+ background: linear-gradient(to right, rgba(95,156,217,1) 0%, rgba(95,156,217,1) 33%, rgba(94,190,227,1) 33%, rgba(94,190,227,1) 66%, rgba(95,156,217,1) 66%, rgba(95,156,217,1) 100%);
+}
+
+* {
+   margin: 0;
+   padding: 0;
+ }
+
+.loginbox {
+  display: block;
+  margin: 5px auto;
+
+  max-width: 305px;
+  max-height: 200px;
+  font-size: 18px;
+  margin-bottom: 0px;
+  padding-left: 12px;
+
+  background: transparent;
+  box-shadow: inset 0 -4px 3px -2px #5ebee3;
+  outline-width: 0px;
+  border-width: 0;
+}
+
+::placeholder {
+   color: #55595C;
+}
+
+.loginbox:focus {
+  box-shadow: inset 0 -4px 3px -2px orange;
+}
+
+
+input[type="button"] {
+  display: inline-block;
+  margin: 0px auto;
+  margin-top: 20px;
+
+  padding: 15px;
+  border-width: 0;
+  background: transparent;
+  outline: none;
+
+  font-size: 12px;
+  transition: .4s;
+}
+input[type="button"]:hover{
+  color: #fff;
+  background: lightblue;
+}
+
+.btn:focus {
+  box-shadow: none !important;
+}
+#ImgBkgrd {
+  margin: 0px auto;
+  position: relative;
+  padding: 10px 5px;
+  background: hsla(0,0%,100%,.1);
+  width: 370px;
+  height: 1100px;
+  overflow: hidden;
+}
+
+#ImgBkgrd:before {
+  content: '';
+  margin: -35px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  filter: blur(4px);
+  z-index: -1;
+}
+
+#loginPage, #newAccPage, #userPage{
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 45px;
+  width: 350px;
+  min-height: 400px;
+
+
+  text-align: center;
+  background: rgba(255,255,255,.9);
+  box-shadow: 0 0 2px 2px rgba(5,5,5,0.3);
+  border-width: 0;
+}
+
+#addDiv {
+
+  margin: 0 auto;
+  margin-bottom: 42px;
+  border: solid 0px #000;
+  background-color: white;
+  box-shadow: inset 0 2px 4px -2px rgba(5,5,5,1);
+  transition: .4s;
+}
+
+#confirmBtn {
+  position: fixed;
+  bottom: 2%;
+  right: 10%;
+}
+
+.errorMsg {
+  color: red;
+}
