@@ -5,10 +5,13 @@ from . import views
 app_name = 'core'
 
 urlpatterns = [
-    # Core
-    path('contacts/', views.index, name='index'),
-    # login, logout
-    path('', views.login_view, name='login_view'),
+    path('contacts/', views.contact_view, name='contact_view'),
+    path('contacts/newcontact/', views.create_new_contact, name='create_new_contact'),
+    path('contacts/contactdetail/<int:contact_id>/', views.contact_detail_view, name='contact_detail_view'),
+    path('contacts/search/', views.search_contact, name='search_contact'),
     path('logout/', views.logout_view, name='logout_view'),
 
+    # require login 
+    path('newuser/', views.create_new_user, name='create_new_user'),
+    path('', views.login_view, name='login_view'),
 ]   

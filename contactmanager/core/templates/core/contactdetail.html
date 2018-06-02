@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %} 
+
+{% block content %}
+	<div id="contact-detail-page">
+		<h3>Contact Detail</h3>
+		<hr>
+		<form method="POST">
+			{% csrf_token %}
+			<table class="table contact-detail-info">
+				<tbody>
+					<tr>
+						<th scope="row">Firstname</th>
+						<td>{{ contact.first_name }}</td>
+					</tr>
+					<tr>
+						<th scope="row">Lastname</th>
+						<td>{{ contact.last_name }}</td>
+					</tr>
+					<tr>
+						<th scope="row">Email</th>
+						<td>{{ contact.email }}</td>
+					</tr>
+					<tr>
+						<th scope="row">Phone number</th>
+						<td>{{ contact.phone_number }}</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="contact-detail-buttons">
+				<input type="submit" value="Delete this contact" name="delete-contact" class="btn btn-danger"/>
+				<a href="{% url 'core:contact_view' %}" class="btn btn-primary">Go Back</a>
+			</div>	
+		</form>
+		{% if error_message %}
+			<span id="errorLI" class="errorMsg">{{ error_message }}</span>
+		{% endif %}
+	</div>
+{% endblock %}

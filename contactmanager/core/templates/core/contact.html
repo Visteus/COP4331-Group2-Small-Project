@@ -1,6 +1,18 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-	<p>Contact List</p>
-	<a href="{% url 'core:logout_view' %}">Logout</a>
+	<div id="userPage">
+		<h3>Contact Book</h3>
+		<hr>
+		{% csrf_token %}
+		<!-- <div c -->
+		<div class="input-group mb-3">
+			<input type="text" id="search" name="search" class="form-control" placeholder="Search contacts..." aria-label="Default" aria-describedby="inputGroup-sizing-default">
+		</div>
+		<table id="search-results" class="table table-sm"></table>
+		<div class="contact-buttons">
+			<a href="{% url 'core:create_new_contact' %}" class="btn btn-info">Add Contact</a>
+			<a href="{% url 'core:logout_view' %}" class="btn btn-danger">Logout</a>
+		</div>
+	</div>
 {% endblock %}

@@ -1,55 +1,22 @@
 {% extends 'core/base.html' %} 
 
 {% block content %}
-<!-- <div id="loginPage">
-	<h3>Please Log In</h3>
-
-	<br>
-	<input type="text" id="usernameBox" placeholder="Username" size="23">
-	<br>
-	<input type="password" id="passwordBox" placeholder="Password" size="23">
-	<br>
-	<br>
-
-	<input type="button" value="Submit" id="loginButton" onclick="doLogin();">
-	<input type="button" value="Make New Account" id="newAccButton" onclick="showNewAccPg();">
-	<br>
-	<br>
-
-	<span id="errorMsg1"></span>
-</div> -->
-	<div>
-		<h2>Please Log In</h2>
-		{% if error_message %}
-			<p>{{ error_message }}</p>
-		{% endif %}
+	<div id="loginPage">
+		<h3>Please Log In</h3>
+		<hr> 
 		<form method="POST">
 			{% csrf_token %}
-			<table>
-				<tr>
-					<td>
-						<label for="usernameBox">Username</label>
-					</td>
-					<td>
-						<input type="text" id="usernameBox" name="username" placeholder="Username" size="23">
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label for="passwordBox">Password</label>
-					</td>
-					<td>
-						<input type="password" id="passwordBox" name="password" placeholder="Password" size="23">
-					</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>
-						<!-- <input type="submit" value="Submit" id="loginButton" onclick="doLogin();"> -->
-						<input type="submit" value="Submit">
-					</td>
-				</tr>
-			</table>
+			<div class="login-inputs">
+				<input type="text" id="usernameBox" name="username" placeholder="Username" size="23" class="loginbox">
+				<input type="password" id="passwordBox" name="password" placeholder="Password" size="23" class="loginbox">
+			</div>
+			<div class="login-buttons">
+				<input type="submit" value="Login" class="btn btn-success">
+				<a href="{% url 'core:create_new_user' %}" class="btn btn-primary">Make New Account</a>
+			</div>
 		</form>
+		{% if error_message %}
+			<span id="errorLI" class="errorMsg">{{ error_message }}</span>
+		{% endif %}
 	</div>
 {% endblock %}

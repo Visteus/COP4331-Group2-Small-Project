@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+	<div id="newAccPage">
+		<h3>Create your new account</h3>
+		<hr>
+		<form method="POST">
+			{% csrf_token %}
+			<div class="new-account-inputs">
+				<input type="text" id="usernameBox" name="username" placeholder="Username" size="23" class="loginbox">
+				<input type="password" id="passwordBox" name="password" placeholder="Password" size="23" class="loginbox">
+				<input type="email" id="emailBox" name="email" size="23" placeholder="Email" class="loginbox">
+				<input type="text" id="firstNameBox" name="firstname" placeholder="Firstname" size="23" class="loginbox">
+				<input type="text" id="lastNameBox" name="lastname" placeholder="Lastname" size="23" class="loginbox">
+			</div>
+			<div class="new-account-buttons">
+				<input type="submit" value="Submit" class="btn btn-success">
+				<a href="{% url 'core:login_view' %}" class="btn btn-primary">Go Back</a>
+			</div>
+		</form>
+	</div>
+{% endblock %}

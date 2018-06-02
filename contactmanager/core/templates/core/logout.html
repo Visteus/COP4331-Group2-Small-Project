@@ -1,6 +1,12 @@
 {% extends 'core/base.html' %} 
 
 {% block content %}
-	<p>You have been logged out. Thanks</p>
-	<a href="{% url 'core:login_view' %}">Log in again</a>
+	<div id="logout-page">
+		<div class="logout-info">
+			<div class="alert alert-success logout-message" role="alert">
+				You have been logged out. Thanks!
+			</div>
+			<a href="{% url 'core:login_view' %}" class="btn btn-outline-warning">Login</a>
+		</div>
+	</div>
 {% endblock %}

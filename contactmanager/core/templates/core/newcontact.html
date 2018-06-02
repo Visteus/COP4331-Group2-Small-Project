@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %} 
+
+{% block content %}
+	<div id="new-contact-page">
+		<h3>Create a new contact</h3>
+		<hr>
+		<form method="POST">
+			{% csrf_token %}
+			<div class="new-contact-inputs">
+				<input type="text" id="firstNameBox" name="firstname" placeholder="Firstname" size="23" class="loginbox">
+				<input type="text" id="lastNameBox" name="lastname" placeholder="Lastname" size="23" class="loginbox">
+				<input type="email" id="emailBox" name="email" size="23" placeholder="Email" class="loginbox">
+				<input type="text" id="phonenumberBox" name="phonenumber" placeholder="Phone Number" size="23" class="loginbox">
+			</div>
+			<div class="new-contact-buttons">
+				<input type="submit" value="Submit" class="btn btn-success">
+				<a href="{% url 'core:contact_view' %}" class="btn btn-primary">Go Back</a>
+			</div>
+		</form>
+	</div>
+{% endblock %}
