@@ -1,9 +1,25 @@
-{% if contacts.count > 0 %}
-	{% for contact in contacts %}
-		<li>
-			<a href="{% url 'core:contact_detail_view' contact.id %}">{{ contact }}</a>
-		</li>
-	{% endfor %}
-{% else %}
-		<li>None to show!</li>
-{% endif %}
+<thead>
+	<tr>
+		<th scope="col">First</th>
+		<th scope="col">Last</th>
+	</tr>
+</thead>
+<tbody>
+	{% if contacts.count > 0 %} 
+		{% for contact in contacts %}
+			<tr>
+				<td>
+					<a href="{% url 'core:contact_detail_view' contact.id %}">{{ contact.first_name }}</a>
+				</td>
+				<td>
+					<a href="{% url 'core:contact_detail_view' contact.id %}">{{ contact.last_name }}</a>
+				</td>
+			</tr>
+		{% endfor %} 
+	{% else %}
+		<tr>
+			<td></td>
+		</tr>
+	{% endif %}
+</tbody>
+

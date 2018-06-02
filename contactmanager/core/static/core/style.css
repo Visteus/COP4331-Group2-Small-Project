@@ -98,7 +98,7 @@ input[type="button"]:hover{
   z-index: -1;
 }
 
-#loginPage, #newAccPage, #userPage{
+#loginPage, #newAccPage, #userPage, #new-contact-page, #logout-page, #contact-detail-page{
   position: absolute;
   margin: auto;
   top: 50%;
@@ -133,4 +133,21 @@ input[type="button"]:hover{
 
 .errorMsg {
   color: red;
+}
+
+/* Tuan's Style */
+.login-inputs input, .new-account-inputs input, .new-contact-inputs input{
+  margin-bottom: 15px;
+}
+
+.login-buttons, .new-account-buttons, .contact-buttons, .new-contact-buttons, .contact-detail-buttons {
+  margin-top: 20px;
+}
+
+#search, .logout-message {
+  margin: 5px 20px;
+}
+
+.logout-info {
+  margin: 80px 20px;
 }

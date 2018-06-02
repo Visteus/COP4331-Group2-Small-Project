@@ -1,15 +1,18 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-	<h2>Contact Manager</h2>
-	{% csrf_token %}
-	<input type="search" id="search" name="search" placeholder="Search contacts..." />
-	<ul id="search-results"></ul>
-	{% for contact in contact_list %}
-		<li>
-			<a href="{% url 'core:contact_detail_view' contact.id %}">{{ contact }}</a>
-		</li>
-	{% endfor %}
-	<a href="{% url 'core:create_new_contact' %}">Create A New Contact</a>
-	<a href="{% url 'core:logout_view' %}">Logout</a>
+	<div id="userPage">
+		<h3>Contact Book</h3>
+		<hr>
+		{% csrf_token %}
+		<!-- <div c -->
+		<div class="input-group mb-3">
+			<input type="text" id="search" name="search" class="form-control" placeholder="Search contacts..." aria-label="Default" aria-describedby="inputGroup-sizing-default">
+		</div>
+		<table id="search-results" class="table table-sm"></table>
+		<div class="contact-buttons">
+			<a href="{% url 'core:create_new_contact' %}" class="btn btn-info">Add Contact</a>
+			<a href="{% url 'core:logout_view' %}" class="btn btn-danger">Logout</a>
+		</div>
+	</div>
 {% endblock %}
