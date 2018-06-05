@@ -5,11 +5,12 @@ body, #ImgBkgrd::before {
 }
 
 h1 {
-  font-size: 22px;
+  font-size: 26px;
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 22px;
+  font-weight: bolder;
   padding-bottom: 10px;
 }
 
@@ -23,11 +24,14 @@ hr {
  border: 0;
  height: 3px !important;
  background: linear-gradient(to right, rgba(95,156,217,1) 0%, rgba(95,156,217,1) 33%, rgba(94,190,227,1) 33%, rgba(94,190,227,1) 66%, rgba(95,156,217,1) 66%, rgba(95,156,217,1) 100%);
+ padding-bottom: 2px;
+ margin-bottom: 45px;
 }
 
 * {
    margin: 0;
    padding: 0;
+
  }
 
 .loginbox {
@@ -54,34 +58,17 @@ hr {
   box-shadow: inset 0 -4px 3px -2px orange;
 }
 
-
-input[type="button"] {
-  display: inline-block;
-  margin: 0px auto;
-  margin-top: 20px;
-
-  padding: 15px;
-  border-width: 0;
-  background: transparent;
-  outline: none;
-
-  font-size: 12px;
-  transition: .4s;
-}
-input[type="button"]:hover{
-  color: #fff;
-  background: lightblue;
-}
-
 .btn:focus {
   box-shadow: none !important;
 }
+
+
 #ImgBkgrd {
   margin: 0px auto;
   position: relative;
   padding: 10px 5px;
   background: hsla(0,0%,100%,.1);
-  width: 370px;
+  width: 380px;
   height: 1100px;
   overflow: hidden;
 }
@@ -94,7 +81,7 @@ input[type="button"]:hover{
   right: 0;
   bottom: 0;
   left: 0;
-  filter: blur(4px);
+  filter: blur(6px);
   z-index: -1;
 }
 
@@ -105,6 +92,7 @@ input[type="button"]:hover{
   left: 50%;
   transform: translate(-50%, -50%);
   padding-top: 45px;
+  padding-bottom: 10px;
   width: 350px;
   min-height: 400px;
 
@@ -131,17 +119,21 @@ input[type="button"]:hover{
   right: 10%;
 }
 
+table, th, td {
+  text-align: center;
+}
+
 .errorMsg {
   color: red;
 }
 
 /* Tuan's Style */
 .login-inputs input, .new-account-inputs input, .new-contact-inputs input{
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .login-buttons, .new-account-buttons, .contact-buttons, .new-contact-buttons, .contact-detail-buttons {
-  margin-top: 20px;
+  margin-top: 60px;
 }
 
 #search, .logout-message {
